@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+<title>Login Page d</title>
+</head>
+<body>
+	<div class="loginbox">
+		<form th:action="@{loginSubmit}" method="POST" >
+			<p>username： <input type="text" name="loginName"/> </p>
+			<p>password： <input type="password" name="pwd"/></p>
+			<p><input type="submit" value="submit"/></p>
+			<p>remember<input type="checkbox" name="rememberMe" value="true"/></p>
+		</form>
+	</div>
+</body>
+</html>

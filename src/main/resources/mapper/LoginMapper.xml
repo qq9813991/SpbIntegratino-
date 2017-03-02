@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.ayu.spbintegration.mapper.LoginMapper">
+
+	<resultMap id="loginParmList" type="com.ayu.spbintegration.parm.LoginParm">
+        <result column="loginName" property="loginName" />  
+        <result column="pwd" property="pwd" />  
+        <result column="userid" property="userId"/>
+        <result column="role" property="role"/>
+    </resultMap>  
+
+
+	<select id="checkLogin" parameterType="com.ayu.spbintegration.parm.LoginParm" resultType="com.ayu.spbintegration.parm.LoginParm">
+	    SELECT * FROM LOGININFO WHERE LOGINNAME=#{loginName} AND PWD=#{pwd}  
+	</select>   
+	
+	<select id="getRole" parameterType="com.ayu.spbintegration.parm.LoginParm" resultType="java.lang.String">
+		SELECT ROLE FROM LOGININFO WHERE LOGINNAME=#{loginName};
+	</select>
+</mapper>
